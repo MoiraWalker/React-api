@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.app {
+    background-color: #6894d8;
+    width: 100vw;
+    height: 100%;
+}
+
+.app-header{
+    width: 100%;
+    padding: 20px 0 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pokemon-logo {
+    width: 300px;
+}
+
+.button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px 20px 0px;
+}
+
+.page-container {
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.pokemon-name-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
