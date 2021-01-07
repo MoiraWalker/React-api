@@ -1,4 +1,3 @@
-import React from 'react';
 import './index.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
@@ -37,7 +36,7 @@ export const Pokemon = ({ pokemonName }) => {
                     </div>
                     <div className="pokemon-item-abilities">
                         <label className="pokemon-label">Abilities</label>
-                        { pokemonData.abilities.map( (ability) => {
+                        { pokemonData.abilities.map((ability) => {
                                 return <p key={ability.ability.name} className="pokemon-ability">{ability.ability.name}</p>
                         })
                         }

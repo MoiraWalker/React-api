@@ -7,8 +7,8 @@ import { Button, Pokemon } from "./components";
 function App() {
   const [pokemonNames, setPokemonNames ] = useState("");
   const [ currentPageUrl, setCurrentPageUrl ] = useState(`https://pokeapi.co/api/v2/pokemon`);
-  const [ nextPageUrl, setNextPageUrl ] = useState();
-  const [ previousPageUrl, setPreviousPageUrl ] = useState();
+  const [ nextPageUrl, setNextPageUrl ] = useState("");
+  const [ previousPageUrl, setPreviousPageUrl ] = useState("");
 
   useEffect( () => {
     async function fetchPokemons() {
@@ -22,7 +22,7 @@ function App() {
       }
     }
     fetchPokemons();
-  }, [currentPageUrl] )
+    }, [currentPageUrl])
 
   function nextPage() {
     setCurrentPageUrl(nextPageUrl);
