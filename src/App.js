@@ -5,7 +5,7 @@ import pokemonLogo from "./assets/pokemon-logo.png";
 import { Button, Pokemon } from "./components";
 
 function App() {
-  const [pokemonName, setPokemonName ] = useState("");
+  const [pokemonNames, setPokemonNames ] = useState("");
   const [ currentPageUrl, setCurrentPageUrl ] = useState(`https://pokeapi.co/api/v2/pokemon`);
   const [ nextPageUrl, setNextPageUrl ] = useState();
   const [ previousPageUrl, setPreviousPageUrl ] = useState();
@@ -14,7 +14,7 @@ function App() {
     async function fetchPokemons() {
       try {
         const result = await axios.get(currentPageUrl);
-        setPokemonName(result.data.results);
+        setPokemonNames(result.data.results);
         setNextPageUrl(result.data.next);
         setPreviousPageUrl(result.data.previous);
       } catch (e) {
@@ -42,11 +42,11 @@ function App() {
           <Button onClick={nextPage} className={!nextPageUrl ? 'disabled-button' : 'primary-button'} >Next</Button>
         </div>
         <div className="page-container">
-          {pokemonName &&
+          {pokemonNames &&
           <div className="pokemon-name-list">
             {
-              pokemonName.map((names) => {
-                return <Pokemon key={names.name} pokemonName={names.name}></Pokemon>
+              pokemonNames.map((name) => {
+                return <Pokemon key={name.name} pokemonName={name.name}></Pokemon>
               })
             }
           </div>
